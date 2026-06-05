@@ -9,6 +9,8 @@ Sanjay Marathe	Admin / ML lead	@g25ait2096
 Rohit	Infra / Docker	@ABC
 Reetesh	CI/CD	@XYZ
 Aamir	CI/CD	@XYZ
+
+
 Stack
 Model: distilbert-base-uncased (Hugging Face)
 Dataset: SST-2 (GLUE)
@@ -25,11 +27,17 @@ End-to-End MLOps Pipeline — IIT Jodhpur PGD AI
 > **Task:** Binary sentiment classification on SST-2 using DistilBERT, fine-tuned on Kaggle, tracked with W&B, containerised with Docker, and automated with GitHub Actions.
 ---
 Live Links (replace with your real URLs after completing each task)
+
 Resource	URL
+
 Kaggle Notebook — v1	`https://www.kaggle.com/YOUR-USERNAME/mlops-a3-v1`
+
 Kaggle Notebook — v2	`https://www.kaggle.com/YOUR-USERNAME/mlops-a3-v2`
+
 Hugging Face Model	`https://huggingface.co/YOUR-HF-USERNAME/distilbert-sst2-v1`
+
 Docker Image	`docker pull YOUR-DOCKERHUB/mlops-a3-inference:latest`
+
 W&B Dashboard	`https://wandb.ai/YOUR-WANDB/mlops-assignment3`
 ---
 Repository Structure
