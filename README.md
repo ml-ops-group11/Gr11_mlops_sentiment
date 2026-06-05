@@ -99,10 +99,18 @@ Go to: GitHub repo → Actions → Inference → Run workflow
 Enter any text in the `input_text` box and click Run workflow.
 ---
 Experiment Comparison (V1 vs V2)
+
 Metric	Version 1	Version 2
+
 Epochs	3	5
+
 Batch size	16	32
+
 Learning rate	3e-5	2e-5
+
 Accuracy	(fill after training)	(fill after training)
+
 F1 (weighted)	(fill after training)	(fill after training)
+
 Val Loss	(fill after training)	(fill after training)
+
