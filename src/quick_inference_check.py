@@ -13,7 +13,6 @@ Usage:
 
 import os
 
-from datasets import load_dataset
 from transformers import pipeline
 
 # ── Config — update after Task 5 push ────────────────────────────────────────

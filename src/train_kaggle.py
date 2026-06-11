@@ -34,10 +34,7 @@ print("Secrets loaded ✓")
 
 import json
 
-import numpy as np
-import pandas as pd
-import torch
-from datasets import Dataset, DatasetDict, load_dataset
+from datasets import Dataset, load_dataset
 from sklearn.metrics import accuracy_score, f1_score
 from transformers import (AutoModelForSequenceClassification, AutoTokenizer,
                           DataCollatorWithPadding, Trainer, TrainingArguments)
