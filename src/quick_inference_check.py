@@ -23,8 +23,14 @@ HF_TOKEN = os.environ.get("HF_TOKEN")
 SAMPLES = [
     ("it 's a charming and often affecting journey .", "POSITIVE"),
     ("unflinchingly bleak and desperate", "NEGATIVE"),
-    ("allows us to hope that nolan is poised to embark a major career as a commercial director", "POSITIVE"),
-    ("the acting , costumes , music , cinematography and sound are all astounding given the production 's austere locales .", "POSITIVE"),
+    (
+        "allows us to hope that nolan is poised to embark a major career as a commercial director",
+        "POSITIVE",
+    ),
+    (
+        "the acting , costumes , music , cinematography and sound are all astounding given the production 's austere locales .",
+        "POSITIVE",
+    ),
     ("it 's predictable , formulaic and , worst of all , boring .", "NEGATIVE"),
 ]
 
@@ -44,8 +50,10 @@ clf = pipeline(
 correct = 0
 for text, expected in SAMPLES:
     result = clf(text)[0]
-    match  = "✓" if result["label"] == expected else "✗"
+    match = "✓" if result["label"] == expected else "✗"
     correct += int(result["label"] == expected)
     print(f"{match}  [{result['label']:8s} {result['score']:.3f}]  {text[:60]}")
 
-print(f"\nAccuracy on 5 samples: {correct}/{len(SAMPLES)} = {correct/len(SAMPLES)*100:.0f}%")
+print(
+    f"\nAccuracy on 5 samples: {correct}/{len(SAMPLES)} = {correct/len(SAMPLES)*100:.0f}%"
+)
