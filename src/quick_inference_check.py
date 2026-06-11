@@ -12,8 +12,9 @@ Usage:
 """
 
 import os
-from transformers import pipeline
+
 from datasets import load_dataset
+from transformers import pipeline
 
 # ── Config — update after Task 5 push ────────────────────────────────────────
 HF_MODEL = os.environ.get("HF_MODEL", "rohit-2145/roberta-sst2-v4")
