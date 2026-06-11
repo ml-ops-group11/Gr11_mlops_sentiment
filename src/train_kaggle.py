@@ -16,6 +16,13 @@ DATASET: SST-2 (Stanford Sentiment Treebank, binary sentiment)
 # !pip install -q transformers datasets wandb huggingface_hub scikit-learn --upgrade
 
 import os
+import json
+import re
+
+from datasets import Dataset, load_dataset
+from sklearn.metrics import accuracy_score, f1_score
+from transformers import (AutoModelForSequenceClassification, AutoTokenizer,
+                          DataCollatorWithPadding, Trainer, TrainingArguments)
 
 import wandb
 from huggingface_hub import login
@@ -32,12 +39,7 @@ wandb.login()
 
 print("Secrets loaded ✓")
 
-import json
 
-from datasets import Dataset, load_dataset
-from sklearn.metrics import accuracy_score, f1_score
-from transformers import (AutoModelForSequenceClassification, AutoTokenizer,
-                          DataCollatorWithPadding, Trainer, TrainingArguments)
 
 VERSION = "v1"
 MODEL_NAME = "distilbert-base-uncased"
@@ -48,7 +50,6 @@ TRAIN_SIZE = 10_000
 VAL_SIZE = 1_000
 SEED = 123
 
-import re
 
 
 def clean_text(text: str) -> str:

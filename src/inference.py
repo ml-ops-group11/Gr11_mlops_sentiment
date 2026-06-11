@@ -6,6 +6,7 @@ from transformers import pipeline
 # ── Config ────────────────────────────────────────────────────────────────────
 DEFAULT_MODEL = "rohit-2145/roberta-sst2-v4"   # ← set after Task 5
 
+
 def run_inference(text: str, model_name: str) -> dict:
     """Load model from HF Hub and return prediction."""
     print(f"Loading model: {model_name}")

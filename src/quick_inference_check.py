@@ -28,7 +28,7 @@ SAMPLES = [
         "POSITIVE",
     ),
     (
-        "the acting , costumes , music , cinematography and sound are all astounding given the production 's austere locales .",
+        "the acting , costumes , music  and sound are all astounding given the production 's austere locales .",
         "POSITIVE",
     ),
     ("it 's predictable , formulaic and , worst of all , boring .", "NEGATIVE"),

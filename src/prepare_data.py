@@ -13,7 +13,6 @@ import json
 import os
 import re
 
-import pandas as pd
 from datasets import load_dataset
 
 # ── 1. Load raw data ─────────────────────────────────────────────────────────
