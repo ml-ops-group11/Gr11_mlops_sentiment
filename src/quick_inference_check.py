@@ -17,7 +17,7 @@ from datasets import load_dataset
 
 # ── Config — update after Task 5 push ────────────────────────────────────────
 HF_MODEL = os.environ.get("HF_MODEL", "rohit-2145/roberta-sst2-v4")
-HF_TOKEN = os.environ.get("HF_TOKEN", "")
+HF_TOKEN = os.environ.get("HF_TOKEN")
 
 # ── Five sample sentences from SST-2 validation set ──────────────────────────
 SAMPLES = [
