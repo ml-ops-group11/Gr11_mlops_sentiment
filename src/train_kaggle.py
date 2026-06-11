@@ -15,11 +15,12 @@ DATASET: SST-2 (Stanford Sentiment Treebank, binary sentiment)
 # Run this once at notebook start-up
 # !pip install -q transformers datasets wandb huggingface_hub scikit-learn --upgrade
 
-# ── CELL 2 ── Load secrets (Kaggle Secrets — never hard-code tokens) ──────────
-from kaggle_secrets import UserSecretsClient
 import os
+
 import wandb
 from huggingface_hub import login
+# ── CELL 2 ── Load secrets (Kaggle Secrets — never hard-code tokens) ──────────
+from kaggle_secrets import UserSecretsClient
 
 secrets = UserSecretsClient()
 
@@ -32,18 +33,14 @@ wandb.login()
 print("Secrets loaded ✓")
 
 import json
+
 import numpy as np
 import pandas as pd
 import torch
-from datasets import load_dataset, DatasetDict, Dataset
-from transformers import (
-    AutoTokenizer,
-    AutoModelForSequenceClassification,
-    TrainingArguments,
-    Trainer,
-    DataCollatorWithPadding,
-)
+from datasets import Dataset, DatasetDict, load_dataset
 from sklearn.metrics import accuracy_score, f1_score
+from transformers import (AutoModelForSequenceClassification, AutoTokenizer,
+                          DataCollatorWithPadding, Trainer, TrainingArguments)
 
 VERSION = "v1"
 MODEL_NAME = "distilbert-base-uncased"
