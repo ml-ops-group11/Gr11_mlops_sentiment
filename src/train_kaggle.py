@@ -6,16 +6,6 @@ WHAT THIS FILE IS:
   Each "# ── CELL N ──" comment marks a separate notebook cell.
   Run them top-to-bottom in order.
 
-MODEL CHOICE — DistilBERT (distilbert-base-uncased)
-  Why DistilBERT?
-  • Size ~66 MB — well under the 200 MB guideline; trains in < 20 min on T4.
-  • Distilled from BERT-base; retains 97 % of BERT's GLUE score.
-  • HF model card: https://huggingface.co/distilbert-base-uncased
-  • Native support for sequence classification via
-    DistilBertForSequenceClassification — no custom heads needed.
-  • Widely used benchmark; extensive community support and known-good
-    hyperparameter ranges for sentiment tasks.
-
 DATASET: SST-2 (Stanford Sentiment Treebank, binary sentiment)
   Loaded from Hugging Face datasets library.
   10 000 train / 1 000 validation samples (sampled for Kaggle free-GPU).
@@ -36,12 +26,11 @@ secrets = UserSecretsClient()
 os.environ["WANDB_API_KEY"] = secrets.get_secret("WANDB_API_KEY")
 HF_TOKEN = secrets.get_secret("HF_TOKEN")
 
-login(token=HF_TOKEN)   # authenticate with Hugging Face Hub
-wandb.login()           # authenticate with W&B (uses env var set above)
+login(token=HF_TOKEN)   
+wandb.login()           
 
 print("Secrets loaded ✓")
 
-# ── CELL 3 ── Imports ─────────────────────────────────────────────────────────
 import json
 import numpy as np
 import pandas as pd
@@ -56,24 +45,16 @@ from transformers import (
 )
 from sklearn.metrics import accuracy_score, f1_score
 
-# ── CELL 4 ── Configuration — edit this block to create Version 2 ─────────────
-# ============================================================
-#  VERSION  |  epochs  |  lr      |  batch  |  run_name
-# ----------|----------|----------|---------|------------
-#    v1     |    3     |  3e-5    |   16    |  run-v1
-#    v2     |    5     |  2e-5    |   32    |  run-v2   ← change these
-# ============================================================
 
-VERSION      = "v1"         # <-- change to "v2" for the second run
+VERSION      = "v1"         
 MODEL_NAME   = "distilbert-base-uncased"
-NUM_EPOCHS   = 3            # v2: change to 5
-BATCH_SIZE   = 16           # v2: change to 32
-LEARNING_RATE = 3e-5        # v2: change to 2e-5
+NUM_EPOCHS   = 4            
+BATCH_SIZE   = 16           
+LEARNING_RATE = 2e-5        
 TRAIN_SIZE   = 10_000
 VAL_SIZE     = 1_000
-SEED         = 42
+SEED         = 123
 
-# ── CELL 5 ── Prepare dataset ─────────────────────────────────────────────────
 import re
 
 def clean_text(text: str) -> str:
@@ -154,14 +135,14 @@ training_args = TrainingArguments(
     output_dir                  = f"./results-{VERSION}",
     num_train_epochs            = NUM_EPOCHS,
     per_device_train_batch_size = BATCH_SIZE,
-    per_device_eval_batch_size  = 64,
+    per_device_eval_batch_size  = 32,
     learning_rate               = LEARNING_RATE,
     warmup_ratio                = 0.1,
     weight_decay                = 0.01,
     eval_strategy               = "epoch",
     save_strategy               = "epoch",
     load_best_model_at_end      = True,
-    metric_for_best_model       = "f1",
+    metric_for_best_model       = "accuracy",
     report_to                   = "wandb",
     run_name                    = f"run-{VERSION}",
     seed                        = SEED,
