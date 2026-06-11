@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # requirements.txt
 # Pinned versions chosen for:
 #   • transformers 4.40.x — stable Trainer API, DistilBERT support
@@ -20,11 +19,3 @@ accelerate==0.28.0
 pandas==2.2.2
 numpy==1.26.4
 flake8==7.0.0
-=======
-transformers>=4.30.0
-torch>=2.0.0
-datasets>=2.12.0
-scikit-learn>=1.2.0
-wandb>=0.15.0
-flake8>=6.0.0
->>>>>>> 37cf2e6 (ci cd pipeline)
