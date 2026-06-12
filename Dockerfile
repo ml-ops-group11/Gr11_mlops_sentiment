@@ -7,7 +7,7 @@ FROM python:3.11-slim
 
 # ── Build argument — override at docker build time ────────────────────────────
 # Usage: docker build --build-arg HF_MODEL_NAME=your-user/your-repo .
-ARG HF_MODEL_NAME="YOUR-HF-USERNAME/distilbert-sst2-v1"
+ARG HF_MODEL_NAME="rohit-2145/roberta-sst2-v4"
 ENV HF_MODEL=${HF_MODEL_NAME}
 
 # ── System dependencies ───────────────────────────────────────────────────────
