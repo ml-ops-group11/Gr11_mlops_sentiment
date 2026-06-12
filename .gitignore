@@ -20,6 +20,7 @@ parts/
 sdist/
 var/
 wheels/
+onnx_model/
 share/python-wheels/
 *.egg-info/
 .installed.cfg

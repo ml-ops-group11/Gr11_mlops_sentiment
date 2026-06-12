@@ -1,17 +1,6 @@
 # requirements.txt
-# Pinned versions chosen for:
-#   • transformers 4.40.x — stable Trainer API, DistilBERT support
-#   • torch 2.2.x — compatible with CUDA 11.8 (Kaggle T4) and CPU
-#   • datasets 2.18.x — SST-2 loader tested with this version
-#   • wandb 0.16.x — stable run logging API
-#   • huggingface_hub 1.3.0 — push_to_hub, login helpers
-#   • scikit-learn 1.4.x — compute_metrics accuracy/f1
-#   • accelerate 0.28.x — required by transformers Trainer for GPU
-#   • flake8 — CI linting (Task 7.1)
 
-transformers==5.0.0
-torch==2.10.0
-huggingface_hub==1.3.0
-accelerate==0.28.0
-numpy==1.26.4
-flake8==7.0.0
+onnxruntime
+tokenizers
+numpy
+huggingface_hub
