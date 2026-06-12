@@ -4,7 +4,7 @@ import sys
 from transformers import pipeline
 
 # ── Config ────────────────────────────────────────────────────────────────────
-DEFAULT_MODEL = "rohit-2145/roberta-sst2-v4"
+DEFAULT_MODEL = "rohit-2145/roberta-sst2-v4-onnx"
 
 # ── Read model config once ────────────────────────────────────────────────────
 MODEL_NAME = os.environ.get("HF_MODEL", DEFAULT_MODEL).strip()
