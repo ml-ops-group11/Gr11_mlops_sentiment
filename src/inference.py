@@ -4,7 +4,7 @@ from tokenizers import Tokenizer
 from onnxruntime import InferenceSession
 from huggingface_hub import hf_hub_download
 
-MODEL_REPO = "rohit-2145/roberta-sst2-v4"
+MODEL_REPO = "rohit-2145/roberta-sst2-v4-onnx"
 
 HF_TOKEN = os.getenv("HF_TOKEN")
 
