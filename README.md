@@ -36,7 +36,7 @@ Kaggle Notebook — Final	'https://www.kaggle.com/code/rohitragh2145/e2e-sentime
 
 Hugging Face Model	`https://huggingface.co/rohit-2145/roberta-sst2-v4`
 
-Docker Image	`https://hub.docker.com/repository/docker/joyboy2145/roberta-sst2-inference/tags/latest/sha256-b1c20540e957804e6e04a58b0cdb8c630255f51310e3de9711a435b8f9057b12`
+Docker Image	`https://hub.docker.com/r/joyboy2145/roberta-sst2-inference`
 
 W&B Dashboard	`https://wandb.ai/models-prom-iit-rajasthan8268/huggingface?nw=nwuserg25ait2145`
 ---
@@ -98,7 +98,7 @@ docker push YOUR-DOCKERHUB/mlops-a3-inference:latest
 Go to: GitHub repo → Actions → Inference → Run workflow
 Enter any text in the `input_text` box and click Run workflow.
 ---
-Experiment Comparison (V1 vs V2)
+Experiment Comparison 
 
 Metric	Version 1	Version 2
 
