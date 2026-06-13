@@ -5,10 +5,10 @@ End-to-end MLOps pipeline fine-tuning DistilBERT on SST-2 sentiment classificati
 
 Team
 Name	Role	GitHub
-Sanjay Marathe	Admin / ML lead	@g25ait2096
-Rohit	Infra / Docker	@ABC
-Reetesh	CI/CD	@XYZ
-Aamir	CI/CD	@XYZ
+Reetesh - Admin
+Sanjay - Mixed Roles
+Rohit- Mixed Roles
+Aamir- Mixed Roles
 
 
 Stack
@@ -24,21 +24,21 @@ develop — integration branch
 
 
 End-to-End MLOps Pipeline — IIT Jodhpur PGD AI
-> **Task:** Binary sentiment classification on SST-2 using DistilBERT, fine-tuned on Kaggle, tracked with W&B, containerised with Docker, and automated with GitHub Actions.
+> **Task:** Binary sentiment classification on SST-2 using RoBERTa-large , fine-tuned on Kaggle, tracked with W&B, containerised with Docker, and automated with GitHub Actions.
 ---
-Live Links (replace with your real URLs after completing each task)
+Live Links
 
 Resource	URL
 
-Kaggle Notebook — v1	`https://www.kaggle.com/YOUR-USERNAME/mlops-a3-v1`
+Kaggle Notebook — Initial	'https://www.kaggle.com/code/g25ait2096/g25ait2096-mlops-sentiment-v1'
 
-Kaggle Notebook — v2	`https://www.kaggle.com/YOUR-USERNAME/mlops-a3-v2`
+Kaggle Notebook — Final	'https://www.kaggle.com/code/rohitragh2145/e2e-sentiment'
 
-Hugging Face Model	`https://huggingface.co/YOUR-HF-USERNAME/distilbert-sst2-v1`
+Hugging Face Model	`https://huggingface.co/rohit-2145/roberta-sst2-v4`
 
-Docker Image	`docker pull YOUR-DOCKERHUB/mlops-a3-inference:latest`
+Docker Image	`https://hub.docker.com/repository/docker/joyboy2145/roberta-sst2-inference/tags/latest/sha256-b1c20540e957804e6e04a58b0cdb8c630255f51310e3de9711a435b8f9057b12`
 
-W&B Dashboard	`https://wandb.ai/YOUR-WANDB/mlops-assignment3`
+W&B Dashboard	`https://wandb.ai/models-prom-iit-rajasthan8268/huggingface?nw=nwuserg25ait2145`
 ---
 Repository Structure
 ```
